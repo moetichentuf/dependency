@@ -1,18 +1,8 @@
 <?php
-
-namespace Acme;
-
-class UppercaseTransformer implements TransformerInterface
+interface iTemplate
 {
-    private $transformer;
-
-    public function __construct(TransformerInterface $transformer)
-    {
-        $this->transformer = $transformer;
-    }
-
-    public function transform($value)
-    {
-        return strtoupper($this->transformer->transform($value));
-    }
+    public function setVariable($name, $var);
+    public function getHtml($template);
 }
+
+

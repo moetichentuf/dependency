@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use iTemplate;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,4 +21,24 @@ class HomepageController extends AbstractController
         ]);
     }
 
+}
+/**
+ * @Route("/", name="Homepagecontroller_index")
+ */
+
+class Template implements iTemplate
+{
+    private $vars = array();
+
+    public function setVariable($name, $var)
+    {
+
+    }
+
+    public function getHtml($template)
+    {
+
+
+        return $template;
+    }
 }
